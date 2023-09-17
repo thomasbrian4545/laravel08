@@ -100,4 +100,11 @@ class MahasiswaController extends Controller
             ->delete();
         dump($result);
     }
+
+    public function get()
+    {
+        $result = DB::table('mahasiswas')
+            ->get();
+        dump($result);
+    }
 }
