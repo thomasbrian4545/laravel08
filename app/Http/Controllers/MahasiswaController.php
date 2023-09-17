@@ -149,4 +149,11 @@ class MahasiswaController extends Controller
             ->orderBy('nama', 'asc')->skip(1)->take(2)->get();
         return view('tampil-mahasiswa', ['mahasiswas' => $result]);
     }
+
+    public function first()
+    {
+        $result = DB::table('mahasiswas')
+            ->where('nama', 'James Situmorang')->first();
+        dump($result);
+    }
 }
