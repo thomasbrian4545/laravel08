@@ -156,4 +156,11 @@ class MahasiswaController extends Controller
             ->where('nama', 'James Situmorang')->first();
         return view('tampil-mahasiswa', ['mahasiswas' => [$result]]);
     }
+
+    public function find()
+    {
+        $result = DB::table('mahasiswas')
+            ->find(4);
+        return view('tampil-mahasiswa', ['mahasiswas' => [$result]]);
+    }
 }
