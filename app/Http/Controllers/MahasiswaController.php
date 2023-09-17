@@ -58,5 +58,6 @@ class MahasiswaController extends Controller
                     'updated_at' => now()
                 ]
             );
+        dump($result);
     }
 }
