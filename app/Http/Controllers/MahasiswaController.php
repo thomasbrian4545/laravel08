@@ -125,4 +125,21 @@ class MahasiswaController extends Controller
             ->get();
         return view('tampil-mahasiswa', ['mahasiswas' => $result]);
     }
+
+    public function getWhere()
+    {
+        $result = DB::table('mahasiswas')
+            ->where('ipk', '<', 3)
+            ->orderByDesc('nama')
+            ->get();
+        return view('tampil-mahasiswa', ['mahasiswas' => $result]);
+    }
+
+    public function select()
+    {
+        $result = DB::table('mahasiswas')
+            ->select('nim', 'nama as nama_lengkap')
+            ->get();
+        dump($result);
+    }
 }
