@@ -118,4 +118,11 @@ class MahasiswaController extends Controller
         echo ($result[0]->tanggal_lahir) . "<br>";
         echo ($result[0]->ipk) . "<br>";
     }
+
+    public function getView()
+    {
+        $result = DB::table('mahasiswas')
+            ->get();
+        return view('tampil-mahasiswa', ['mahasiswas' => $result]);
+    }
 }
