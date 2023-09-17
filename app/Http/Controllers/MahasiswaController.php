@@ -107,4 +107,15 @@ class MahasiswaController extends Controller
             ->get();
         dump($result);
     }
+
+    public function getTampil()
+    {
+        $result = DB::table('mahasiswas')
+            ->get();
+        echo ($result[0]->id) . "<br>";
+        echo ($result[0]->nim) . "<br>";
+        echo ($result[0]->nama) . "<br>";
+        echo ($result[0]->tanggal_lahir) . "<br>";
+        echo ($result[0]->ipk) . "<br>";
+    }
 }
