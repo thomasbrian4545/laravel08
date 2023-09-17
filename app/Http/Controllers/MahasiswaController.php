@@ -74,4 +74,22 @@ class MahasiswaController extends Controller
             );
         dump($result);
     }
+
+    public function updateOrInsert()
+    {
+        $result = DB::table('mahasiswas')
+            ->updateOrInsert(
+                [
+                    'nim' => '19005011'
+                ],
+                [
+                    'nama' => 'Riana Putria',
+                    'tanggal_lahir' => '2000-11-23',
+                    'ipk' => 2.7,
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]
+            );
+        dump($result);
+    }
 }
