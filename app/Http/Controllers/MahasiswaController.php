@@ -154,6 +154,6 @@ class MahasiswaController extends Controller
     {
         $result = DB::table('mahasiswas')
             ->where('nama', 'James Situmorang')->first();
-        dump($result);
+        return view('tampil-mahasiswa', ['mahasiswas' => [$result]]);
     }
 }
