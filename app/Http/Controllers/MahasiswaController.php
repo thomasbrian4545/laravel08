@@ -142,4 +142,11 @@ class MahasiswaController extends Controller
             ->get();
         dump($result);
     }
+
+    public function take()
+    {
+        $result = DB::table('mahasiswas')
+            ->orderBy('nama', 'asc')->skip(1)->take(2)->get();
+        return view('tampil-mahasiswa', ['mahasiswas' => $result]);
+    }
 }
