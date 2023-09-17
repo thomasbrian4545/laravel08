@@ -171,4 +171,19 @@ class MahasiswaController extends Controller
             ->get();
         echo ($result[0]->total_mahasiswa);
     }
+
+    public function index()
+    {
+        $result = DB::table('mahasiswas')
+            ->get();
+        return view('index-mahasiswa', ['mahasiswas' => $result]);
+    }
+
+    public function mahasiswa($nim)
+    {
+        $result = DB::table('mahasiswas')
+            ->where('nim', $nim)
+            ->get();
+        return view('tampil-mahasiswa', ['mahasiswas' => $result]);
+    }
 }

@@ -29,3 +29,5 @@ Route::get('/take', [MahasiswaController::class, 'take']);
 Route::get('/first', [MahasiswaController::class, 'first']);
 Route::get('/find', [MahasiswaController::class, 'find']);
 Route::get('/raw', [MahasiswaController::class, 'raw']);
+Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
+Route::get('/mahasiswa/{nim}', [MahasiswaController::class, 'mahasiswa']);
