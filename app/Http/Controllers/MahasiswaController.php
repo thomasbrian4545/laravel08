@@ -21,4 +21,42 @@ class MahasiswaController extends Controller
         );
         dump($result);
     }
+
+    public function insertBanyak()
+    {
+        $result = DB::table('mahasiswas')->insert(
+            [
+                [
+                    'nim' => '19002032',
+                    'nama' => 'Rina Kumala Sari',
+                    'tanggal_lahir' => '2000-06-28',
+                    'ipk' => 3.4,
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ],
+                [
+                    'nim' => '18012012',
+                    'nama' => 'James Situmorang',
+                    'tanggal_lahir' => '1999-04-02',
+                    'ipk' => 2.7,
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ],
+            ]
+        );
+        dump($result);
+    }
+
+    public function update()
+    {
+        $result = DB::table('mahasiswas')
+            ->where('nama', 'Sari Citra Lestari')
+            ->update(
+                [
+                    'tanggal_lahir' => '2002-01-01',
+                    'ipk' => 3.19,
+                    'updated_at' => now()
+                ]
+            );
+    }
 }
