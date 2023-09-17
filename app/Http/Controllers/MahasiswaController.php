@@ -92,4 +92,12 @@ class MahasiswaController extends Controller
             );
         dump($result);
     }
+
+    public function delete()
+    {
+        $result = DB::table('mahasiswas')
+            ->where('ipk', '>=', 3.4)
+            ->delete();
+        dump($result);
+    }
 }
