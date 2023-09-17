@@ -60,4 +60,18 @@ class MahasiswaController extends Controller
             );
         dump($result);
     }
+
+    public function updateWhere()
+    {
+        $result = DB::table('mahasiswas')
+            ->where('ipk', '<', 3)
+            ->where('nama', '<>', 'alex')
+            ->update(
+                [
+                    'tanggal_lahir' => '2022-01-01',
+                    'updated_at' => now()
+                ]
+            );
+        dump($result);
+    }
 }
