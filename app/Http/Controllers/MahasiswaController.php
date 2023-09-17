@@ -163,4 +163,12 @@ class MahasiswaController extends Controller
             ->find(4);
         return view('tampil-mahasiswa', ['mahasiswas' => [$result]]);
     }
+
+    public function raw()
+    {
+        $result = DB::table('mahasiswas')
+            ->selectRaw('count(*) as total_mahasiswa')
+            ->get();
+        echo ($result[0]->total_mahasiswa);
+    }
 }
